@@ -13,6 +13,11 @@ export function handlePay(cart) {
 		// Prevent default
 		event.preventDefault();
 
+		// TODO: Form validation
+		// if (ui.checkoutValidation()) {
+		// 	// REST OF CODE
+		// }
+
 		// Store selected shipping method to session
 		const checkedShippingRadio = document.querySelector(
 			'input[name="shipping"]:checked'

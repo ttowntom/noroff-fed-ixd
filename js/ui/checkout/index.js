@@ -7,3 +7,4 @@ export * from "./handleContinueShopping.js";
 export * from "./storeFormData.js";
 export * from "./renderCustomerInformation.js";
 export * from "./renderNoCartItems.js";
+export * from "./checkoutValidation.js";
