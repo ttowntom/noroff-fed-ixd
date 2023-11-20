@@ -13,7 +13,10 @@ Root variables
 	--clr-bg-light: #373737;
 	--clr-bg-middle: #2d2d2d;
 	--clr-bg-dark: #272727;
+	--clr-black: #000;
 	--clr-transparent: hsl(120deg 75% 25% / 0);
+	--clr-error-solid: rgba(255, 0, 0, 0.6);
+	--clr-error: rgba(235, 190, 190, 0.6);
 
 	--ff-def: "Lato", sans-serif;
 	--ff-header: "Anton", sans-serif;
@@ -202,6 +205,22 @@ input[type="submit"]:is(:hover, :active) {
 	border-color: var(--clr-def);
 }
 
+.validation {
+	padding: 0.5rem;
+	margin: 0.5rem 0;
+	border-radius: 0.25rem;
+}
+
+.validation p {
+	margin: 0 !important;
+	color: var(--clr-black);
+}
+
+.validation--error {
+	background-color: var(--clr-error);
+	border: solid var(--clr-error-solid) 2px;
+}
+
 select {
 	/* Suggestion by Anna Blok - https://codepen.io/anna_blok/pen/eYYvxoK */
 	border: solid 1px var(--clr-grey);
@@ -273,6 +292,10 @@ select::-ms-expand {
 
 .grid-col-span-2 {
 	grid-column: span 2;
+}
+
+.display--none {
+	display: none;
 }
 
 .center {
