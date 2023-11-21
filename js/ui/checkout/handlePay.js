@@ -11,7 +11,7 @@ export function handlePay(cart) {
 
 	payButton.addEventListener("click", () => {
 		// Prevent default
-		event.preventDefault();
+		// event.preventDefault();
 
 		// TODO: Form validation
 		// if (ui.checkoutValidation()) {
@@ -42,6 +42,6 @@ export function handlePay(cart) {
 		localStorage.clear();
 
 		// Redirect user
-		window.location.href = `success/?id=${productId}`;
+		// window.location.href = `success/?id=${productId}`;
 	});
 }

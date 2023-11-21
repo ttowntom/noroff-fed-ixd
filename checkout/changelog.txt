@@ -1,1 +1,4 @@
-- Form validation
+---- FORM VALIDATION (Shipping info)
+- Input fields only allow keys that are defined in the data-allow attribute of the HTML input element (or does not allow keys that are defined in the data-block attribute of the HTML input element).
+- Patterns and titles have been added to the HTML input elements to provide feedback to the user when the input is invalid.
+- The CSS is updated to provide feedback to the user when the input is invalid.
