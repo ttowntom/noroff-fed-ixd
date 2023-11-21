@@ -9,5 +9,6 @@ export function checkout(cart) {
 		ui.handleShipping(cart);
 		ui.renderTotal(cart);
 		ui.handlePay(cart);
+		ui.formValidation();
 	}
 }

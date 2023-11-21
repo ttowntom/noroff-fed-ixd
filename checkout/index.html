@@ -201,13 +201,17 @@
 					class="bg--accent-light clr--black shopping--cart shopping--cart-shippingInfo">
 					<h2>Shipping info</h2>
 					<form action="success/" class="grid checkout--shipping-form">
-						<div>
+						<div id="email">
 							<label for="email">Email</label>
 							<input
+								required
 								type="email"
 								name="email"
-								id="email"
+								id="email-input"
+								data-block="\s"
+								title="Please enter a valid email address"
 								placeholder="name@example.com" />
+							<div class="validation validation--error display--none"></div>
 						</div>
 						<div class="checkout--shipping-form-newsletter">
 							<input type="checkbox" name="newsletter" id="newsletter" />
@@ -216,61 +220,99 @@
 								purchase!</label
 							>
 						</div>
-						<div>
+						<div id="first-name">
 							<label for="first-name">First name</label>
 							<input
+								required
 								type="text"
 								name="first-name"
-								id="first-name"
+								id="first-name-input"
+								pattern="[a-zA-Z\-\.\s]{2,}"
+								data-allow="[A-Z]|[a-z]|[-.\s]"
+								title="First name must be at least 2 characters long (letters only))"
 								placeholder="First name" />
+							<div class="validation validation--error display--none"></div>
 						</div>
-						<div>
+						<div id="last-name">
 							<label for="last-name">Last name</label>
 							<input
+								required
 								type="text"
 								name="last-name"
-								id="last-name"
+								id="last-name-input"
+								pattern="[a-zA-Z\-\.\s]{2,}"
+								data-allow="[A-Z]|[a-z]|[-.\s]"
+								title="Last name must be at least 2 characters long (letters only))"
 								placeholder="Last name" />
+							<div class="validation validation--error display--none"></div>
 						</div>
-						<div>
+						<div id="phone">
 							<label for="phone">Phone</label>
 							<input
-								type="text"
+								type="tel"
 								name="phone"
-								id="phone"
-								placeholder="+44 456 678 903" />
+								id="phone-input"
+								minlength="8"
+								maxlength="10"
+								pattern="[0-9]{8,10}"
+								data-allow="[0-9]"
+								title="Please enter a valid norwegian phone number"
+								placeholder="456 67 903" />
+							<div class="validation validation--error display--none"></div>
 						</div>
-						<div>
+						<div id="address">
 							<label for="address">Address</label>
 							<input
+								required
 								type="text"
 								name="address"
-								id="address"
+								id="address-input"
+								pattern="[a-zA-Z\-\.\s0-9]{2,}"
+								title="Please enter a valid address (letters and numbers only))"
+								data-allow="[A-Z]|[a-z]|[0-9]|[-.\s]"
 								placeholder="Street address" />
+							<div class="validation validation--error display--none"></div>
 						</div>
-						<div>
+						<div id="addresss-extra">
 							<label for="apartment">Apartment, floor, etc.</label>
 							<input
 								type="text"
 								name="apartment"
-								id="apartment"
+								id="apartment-input"
 								placeholder="Apartment" />
 						</div>
 						<div class="flex">
-							<div class="checkout--shipping-form-flex">
+							<div id="zip" class="checkout--shipping-form-flex">
 								<label for="zip">Zip code</label>
-								<input type="text" name="zip" id="zip" placeholder="Zip" />
+								<input
+									required
+									type="text"
+									name="zip"
+									id="zip-input"
+									pattern="[0-9]{4}"
+									data-allow="[0-9]"
+									title="Please enter a valid Norwegian zip code"
+									placeholder="Zip" />
+								<div class="validation validation--error display--none"></div>
 							</div>
-							<div class="checkout--shipping-form-flex">
+							<div id="city" class="checkout--shipping-form-flex">
 								<label for="city">City</label>
-								<input type="text" name="city" id="city" placeholder="City" />
+								<input
+									required
+									type="text"
+									name="city"
+									id="city-input"
+									pattern="[a-zA-Z\-\.\s]{2,}"
+									data-allow="[A-Z]|[a-z]|[-.\s]"
+									placeholder="City" />
+								<div class="validation validation--error display--none"></div>
 							</div>
 						</div>
 						<h2>Payment info</h2>
 						<div>
 							<label for="creditcard">Credit card number</label>
 							<input
-								id="creditcard"
+								id="creditcard-input"
 								name="creditcard"
 								type="tel"
 								inputmode="numeric"
@@ -284,17 +326,21 @@
 							<input
 								type="text"
 								name="cardholder"
-								id="cardholder"
+								id="cardholder-input"
 								placeholder="Full name" />
 						</div>
 						<div class="flex">
 							<div class="checkout--shipping-form-flex">
 								<label for="expiry-date">Expiry date</label>
-								<input type="date" name="expiry-date" id="expiry-date" />
+								<input type="date" name="expiry-date" id="expiry-date-input" />
 							</div>
 							<div class="checkout--shipping-form-flex">
 								<label for="ccv">CCV</label>
-								<input type="text" name="ccv" id="ccv" placeholder="123" />
+								<input
+									type="text"
+									name="ccv"
+									id="ccv-input"
+									placeholder="123" />
 							</div>
 						</div>
 						<div class="right">
