@@ -209,7 +209,7 @@
 								name="email"
 								id="email-input"
 								data-block="\s"
-								title="Please enter a valid email address"
+								title="Please enter a valid email address. Example: name@mail.com"
 								placeholder="name@example.com" />
 							<div class="validation validation--error display--none"></div>
 						</div>
@@ -229,7 +229,7 @@
 								id="first-name-input"
 								pattern="[a-zA-Z\-\.\s]{2,}"
 								data-allow="[A-Z]|[a-z]|[-.\s]"
-								title="First name must be at least 2 characters long (letters only))"
+								title="First name must be at least 2 characters long (letters only)"
 								placeholder="First name" />
 							<div class="validation validation--error display--none"></div>
 						</div>
@@ -242,7 +242,7 @@
 								id="last-name-input"
 								pattern="[a-zA-Z\-\.\s]{2,}"
 								data-allow="[A-Z]|[a-z]|[-.\s]"
-								title="Last name must be at least 2 characters long (letters only))"
+								title="Last name must be at least 2 characters long (letters only)"
 								placeholder="Last name" />
 							<div class="validation validation--error display--none"></div>
 						</div>
@@ -254,7 +254,7 @@
 								id="phone-input"
 								minlength="8"
 								maxlength="10"
-								pattern="[0-9]{8,10}"
+								pattern="[0-9]{8}"
 								data-allow="[0-9]"
 								title="Please enter a valid norwegian phone number"
 								placeholder="456 67 903" />
@@ -268,7 +268,7 @@
 								name="address"
 								id="address-input"
 								pattern="[a-zA-Z\-\.\s0-9]{2,}"
-								title="Please enter a valid address (letters and numbers only))"
+								title="Please enter a valid address (letters and numbers only)"
 								data-allow="[A-Z]|[a-z]|[0-9]|[-.\s]"
 								placeholder="Street address" />
 							<div class="validation validation--error display--none"></div>
@@ -303,6 +303,7 @@
 									name="city"
 									id="city-input"
 									pattern="[a-zA-Z\-\.\s]{2,}"
+									title="Please enter a valid city name (letters only)"
 									data-allow="[A-Z]|[a-z]|[-.\s]"
 									placeholder="City" />
 								<div class="validation validation--error display--none"></div>

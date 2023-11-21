@@ -7,22 +7,75 @@ export function formValidation() {
 	const zipInput = document.querySelector("#zip-input");
 	const cityInput = document.querySelector("#city-input");
 
+	const form = document.querySelector(".checkout--shipping-form");
+	const fields = form.querySelectorAll("div[id]");
+
+	// Display error
+	function displayError(field, error) {
+		field.innerHTML = `<p>${error}</p>`;
+		field.classList.remove("display--none");
+	}
+
+	// Function to hide the error message
+	function hideError(field) {
+		field.innerHTML = "";
+		field.classList.add("display--none");
+	}
+
 	// Add dirty listeners
 	function addDirtyListeners() {
 		const form = document.querySelector(".checkout--shipping-form");
 		let inputs = form.getElementsByTagName("input");
 		for (let i = 0; i < inputs.length; i++) {
 			let input = inputs[i];
-			input.addEventListener("input", dirtyInput);
-			input.addEventListener("blur", dirtyInput);
+			input.addEventListener("blur", handleBlurValidation);
 		}
 	}
 
-	// Add dirty class
-	function dirtyInput(evt) {
+	// Create an object to store custom error messages from the title attribute of input elements
+	const customErrorMessages = {};
+
+	// Get all input elements within the form and extract their title attributes for custom error messages
+	function extractErrorMessages() {
+		const form = document.querySelector(".checkout--shipping-form");
+		const inputs = form.querySelectorAll("input");
+
+		inputs.forEach((input) => {
+			const fieldName = input.getAttribute("name");
+			const title = input.getAttribute("title");
+			if (fieldName && title) {
+				customErrorMessages[fieldName] = title.trim();
+			}
+		});
+	}
+
+	// Call the function to extract error messages on page load
+	window.addEventListener("load", extractErrorMessages);
+
+	// Handle validation on blur event
+	function handleBlurValidation(evt) {
 		let element = evt.target;
 		if (element.nodeName === "INPUT") {
 			element.classList.add("dirty");
+
+			// Get the name and corresponding div in fields collection
+			const fieldName = element.getAttribute("name");
+			const correspondingDiv = Array.from(fields).find(
+				(div) => div.id === fieldName
+			);
+
+			if (correspondingDiv) {
+				if (!element.validity.valid) {
+					const errorMessage =
+						customErrorMessages[fieldName] || "Invalid input";
+					displayError(
+						correspondingDiv.querySelector(".validation"),
+						errorMessage
+					);
+				} else {
+					hideError(correspondingDiv.querySelector(".validation"));
+				}
+			}
 		}
 	}
 
@@ -68,12 +121,6 @@ export function formValidation() {
 				}
 			}
 		}
-	}
-
-	// Display error
-	function displayError(field, error) {
-		field.innerHTML = `<p>${error}</p>`;
-		field.classList.remove("display--none");
 	}
 
 	// Use key filtering
