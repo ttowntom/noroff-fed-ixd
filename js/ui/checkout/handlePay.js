@@ -11,12 +11,7 @@ export function handlePay(cart) {
 
 	payButton.addEventListener("click", () => {
 		// Prevent default
-		// event.preventDefault();
-
-		// TODO: Form validation
-		// if (ui.checkoutValidation()) {
-		// 	// REST OF CODE
-		// }
+		event.preventDefault();
 
 		// Store selected shipping method to session
 		const checkedShippingRadio = document.querySelector(
@@ -42,6 +37,6 @@ export function handlePay(cart) {
 		localStorage.clear();
 
 		// Redirect user
-		// window.location.href = `success/?id=${productId}`;
+		window.location.href = `success/?id=${productId}`;
 	});
 }
