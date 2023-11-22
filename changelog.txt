@@ -5,4 +5,7 @@
 - The form will not submit if the input is invalid.
 
 ---- PRICING
-- WIP The price of the product is displayed on the product card.
+-- HOME PAGE & PRODUCTS PAGE
+- The price of the product is displayed on the product cards
+- Sales are displayed on the product cards
+- Sales are displayed on the product page

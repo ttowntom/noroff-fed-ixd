@@ -25,7 +25,10 @@ export function renderDetailsHeroSection(product, productId, category) {
 
 		// Create discounted price
 		let heroDiscountedPrice = document.createElement("strong");
-		heroDiscountedPrice.classList.add("product--hero-price");
+		heroDiscountedPrice.classList.add(
+			"product--hero-price",
+			"product--card-on-sale"
+		);
 		heroDiscountedPrice.innerText = `$${product.discountedPrice}`;
 
 		// Render price
