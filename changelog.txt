@@ -3,3 +3,6 @@
 - Patterns and titles have been added to the HTML input elements to provide feedback to the user when the input is invalid.
 - The CSS is updated to provide feedback to the user when the input is invalid.
 - The form will not submit if the input is invalid.
+
+---- PRICING
+- WIP The price of the product is displayed on the product card.
