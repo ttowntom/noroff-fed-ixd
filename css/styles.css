@@ -868,6 +868,7 @@ Products page (+home page)
 .product--card-uppercase {
 	text-transform: uppercase;
 	font-weight: var(--fw-600);
+	font-size: 1.05rem;
 	margin-bottom: 1rem;
 }
 
