@@ -25,7 +25,11 @@ export function renderDetailsHeroSection(product, productId, category) {
 
 		// Create discounted price
 		let heroDiscountedPrice = document.createElement("strong");
-		heroDiscountedPrice.classList.add("product--hero-price");
+		heroDiscountedPrice.classList.add(
+			"product--hero-price",
+			"product--card-on-sale",
+			"product--card-uppercase"
+		);
 		heroDiscountedPrice.innerText = `$${product.discountedPrice}`;
 
 		// Render price
@@ -33,7 +37,7 @@ export function renderDetailsHeroSection(product, productId, category) {
 		heroPrice.appendChild(heroBasePrice);
 	} else {
 		heroPrice = document.createElement("strong");
-		heroPrice.classList.add("product--hero-price");
+		heroPrice.classList.add("product--hero-price", "product--card-uppercase");
 		heroPrice.innerText = `$${product.price}`;
 	}
 
