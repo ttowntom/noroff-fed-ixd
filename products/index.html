@@ -176,12 +176,14 @@
 							</a>
 						</div>
 						<div class="cta--socials center">
-							<form action="#">
+							<form action="/contact/signed-up/">
 								<label for="email" class="visually-hidden">Email address</label>
 								<input
 									type="email"
 									name="email"
 									id="email"
+									required="required"
+									pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 									placeholder="Enter your email address" />
 								<input type="submit" value="Sign up" />
 							</form>

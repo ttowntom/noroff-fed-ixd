@@ -4,6 +4,9 @@
 - The CSS is updated to provide feedback to the user when the input is invalid.
 - The form will not submit if the input is invalid.
 
+---- FORM VALIDATION (Contact page & Newsletter)
+- Straight HTML validation is used for the contact page and newsletter form.
+
 ---- PRICING
 -- HOME PAGE & PRODUCTS PAGE
 - The price of the product is displayed on the product cards
